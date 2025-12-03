@@ -6,6 +6,7 @@ import { ToastAlerta } from "../../../utils/ToastAlerta";
 import CardProduto from "../cardprodutos/CardProdutos";
 import type Produto from "../../../models/Produto";
 import { AuthContext } from "../../../contexts/AuthContext";
+import ModalProduto from "../modalproduto/ModalProdutos";
 
 function ListaProdutos() {
 
@@ -57,6 +58,10 @@ function ListaProdutos() {
                     />
                 </div>
             )}
+
+            <div className="flex justify-end w-full px-8 mt-8">
+                <ModalProduto />
+            </div>
 
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col">

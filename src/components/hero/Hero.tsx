@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeroHome() {
   return (
     <section className="bg--slate-200 py-24">
@@ -21,15 +23,15 @@ export default function HeroHome() {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
 
-              <a
-                href="/produtos"
+              <Link
+                to="/saibamais"
                 className="rounded-xl bg-indigo-600 px-6 py-3 text-white shadow-md transition hover:bg-indigo-700 textlg-bold"
               >
-                Conheça Mais
-              </a>
+                 Saiba mais 🐶
+              </Link>
 
               <a
-                href="/cadastro"
+                href="/listarprodutos"
                 className="rounded-xl border border-slade-300 px-6 py-3 text-slade-700 shadow-sm transition hover:bg-slade-100"
               >
                 Nossos Produtos

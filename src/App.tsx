@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Perfil from "./pages/perfil/Perfil"
 import { ToastContainer } from "react-toastify"
 import Home from "./pages/Home"
+<<<<<<< HEAD
 
 function App() {
 
@@ -41,9 +42,51 @@ function App() {
           {/* <Footer/> */}
         </BrowserRouter>
       </AuthProvider>
+=======
+import SaibaMais from "./components/saibamais/SaibaMais"
+import DepoimentosPets from "./components/saibamais/depoimentos/DepoimentoPet"
+
+type MenuState = 'closed' | 'open';
+
+function App() {
+
+  const [menuState, setMenuState] = useState<MenuState>('closed');
+
+  const toggleMenu = (): void => {
+    setMenuState(prevState => prevState === 'closed' ? 'open' : 'closed');
+  };
+
+  const closeMenu = (): void => {
+    setMenuState('closed');
+  };
+
+  return (
+    <>
+      <BrowserRouter>
+        <div className="flex flex-col min-h-screen">
+
+          <Navbar 
+            menuState={menuState}
+            onMenuToggle={toggleMenu}
+            onMenuClose={closeMenu}
+          />
+
+          <div className='flex-1 w-full pt-16 bg-white'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/saibamais" element={<SaibaMais />} />
+              <Route path="/depoimentos" element={<DepoimentosPets />} />
+            </Routes>
+          </div>
+
+          <Footer />
+
+        </div>
+      </BrowserRouter>
+>>>>>>> 4482eb5aea1d5cee6bf20505ae9cbaf559af162f
     </>
   )
-  
 }
 
 export default App
