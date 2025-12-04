@@ -27,7 +27,7 @@ export default function HeroHome() {
                 to="/saibamais"
                 className="rounded-xl bg-indigo-600 px-6 py-3 text-white shadow-md transition hover:bg-indigo-700 textlg-bold"
               >
-                 Saiba mais 🐶
+                Saiba mais 🐶
               </Link>
 
               <a

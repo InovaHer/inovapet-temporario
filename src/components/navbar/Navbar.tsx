@@ -24,9 +24,9 @@ type MenuState = 'closed' | 'open';
  * Todas as funções são passadas pelo componente pai (App)
 */
 interface NavbarProps {
-  menuState: MenuState;
-  onMenuToggle: () => void;
-  onMenuClose: () => void;
+    menuState: MenuState;
+    onMenuToggle: () => void;
+    onMenuClose: () => void;
 };
 
 function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>) {
@@ -64,14 +64,14 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
                     {/* Logo da loja, sempre visível, redireciona para Home */}
                     <Link to="/home" className="flex items-center gap-2">
             <img
-                         src="https://ik.imagekit.io/gocq6aosm/patas.png"
-                              alt="Logo InovaPet"
-                                className="w-12 md:w-14"
-                                                         />
+                            src="https://ik.imagekit.io/gocq6aosm/patas.png"
+                                alt="Logo InovaPet"
+                                    className="w-12 md:w-14"
+                                                            />
 
-                                     <span className="text-xl font-bold tracking-wide text-indigo-800 md:text-2xl">
-                                     InovaPet
-                                             </span>
+                                        <span className="text-xl font-bold tracking-wide text-indigo-800 md:text-2xl">
+                                        InovaPet
+                                                </span>
                                             </Link>
 
 
@@ -93,9 +93,9 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
 
                     {/* Botão menu mobile (hambúrguer), só aparece em telas pequenas e quando o menu está fechado */}
                     {menuState === 'closed' && (
-                      <button className="p-2 cursor-pointer md:hidden" onClick={handleMenuToggle} aria-label="Abrir menu">
-                        <ListIcon size={32} weight="bold" />
-                      </button>
+                        <button className="p-2 cursor-pointer md:hidden" onClick={handleMenuToggle} aria-label="Abrir menu">
+                            <ListIcon size={32} weight="bold" />
+                        </button>
                     )}
                 </div>
             </div>
@@ -111,19 +111,19 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
                         {/* Linha com logo à esquerda e botão X à direita */}
                         <div className="flex items-center justify-between w-full mb-2">
 
-                          <img
-                              src="https://ik.imagekit.io/gocq6aosm/patas.png"
-                              alt="Logo"
-                              className='w-50 md:w-60'
-                          />
-                          <button
-                              type="button"
-                              aria-label="Fechar menu"
-                              className="mr-2 text-white cursor-pointer hover:text-gray-300"
-                              onClick={handleMenuClose}
-                          >
-                              <XIcon size={32} weight="bold" />
-                          </button>
+                            <img
+                                src="https://ik.imagekit.io/gocq6aosm/patas.png"
+                                alt="Logo"
+                                className='w-50 md:w-60'
+                            />
+                            <button
+                                type="button"
+                                aria-label="Fechar menu"
+                                className="mr-2 text-white cursor-pointer hover:text-gray-300"
+                                onClick={handleMenuClose}
+                            >
+                                <XIcon size={32} weight="bold" />
+                            </button>
                         </div>
                         
                         {/* Barra de busca mobile */}

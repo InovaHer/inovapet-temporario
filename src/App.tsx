@@ -10,23 +10,46 @@ import { AuthProvider } from "./contexts/AuthContext"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Perfil from "./pages/perfil/Perfil"
 import { ToastContainer } from "react-toastify"
-import Home from "./pages/Home"
+import Home from "./pages/home/Home"
+import SaibaMais from "./components/saibamais/SaibaMais"
+import Navbar from "./components/navbar/Navbar"
+import Footer from "./components/footer/footer"
+import { useState } from "react"
+import Login from "./pages/login/Login"
+import Sobre from "./pages/sobre/Sobre"
+
+type MenuState = 'closed' | 'open';
 
 function App() {
+
+  const [menuState, setMenuState] = useState<MenuState>('closed');
+
+  const toggleMenu = (): void => {
+    setMenuState(prevState => prevState === 'closed' ? 'open' : 'closed');
+  };
+
+  const closeMenu = (): void => {
+    setMenuState('closed');
+  };
 
   return (
     <>
       <AuthProvider>
         <ToastContainer />
         <BrowserRouter>
-          {/* <Navbar /> */}
+          <Navbar
+            menuState={menuState}
+            onMenuToggle={toggleMenu}
+            onMenuClose={closeMenu}
+          />
           <div className="min-h-[80vh]">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
 
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/categorias" element={<ListaCategorias />} />
-              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
+              <Route path="/cadcategoria" element={<FormCategoria />} />
               <Route path="/editarcategoria/:id" element={<FormCategoria />} />
               <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
 
@@ -36,9 +59,15 @@ function App() {
               <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/atualizarusuario" element={<AtualizarPerfil />} />
+
+              <Route path="/saibamais" element={<SaibaMais />} />
+              <Route path="/listarprodutos" element={<ListaProdutos />} />
+              <Route path="/usuarios/logar" element={<Login />} />
+              <Route path="/sobre" element={<Sobre />} />
+
             </Routes>
           </div>
-          {/* <Footer/> */}
+          <Footer/>
         </BrowserRouter>
       </AuthProvider>
     </>

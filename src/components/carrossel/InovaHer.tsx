@@ -1,4 +1,4 @@
-import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react"
+// import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react"
 function InovaHer() {
   return (
     <div className="relative h-[50vh] md:h-[70vh] flex justify-center items-center overflow-hidden bg-white">
@@ -20,13 +20,13 @@ function InovaHer() {
       >
         <div
           className="
-	    flex 
-	    flex-col 
-	    gap-2 md:gap-4
-	    items-center 
-	    justify-center 
-	    py-2 md:py-4
-	  "
+        flex 
+        flex-col 
+        gap-2 md:gap-4
+        items-center 
+        justify-center 
+        py-2 md:py-4
+      "
         >
 
           <img

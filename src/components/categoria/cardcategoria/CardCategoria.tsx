@@ -19,7 +19,7 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
             <div className="flex">
                 <Link to={`/editarcategoria/${categoria.id}`}
                     className="w-full text-slate-100 bg-blue-400
-                       hover:bg-blue-700 
+                    hover:bg-blue-700 
                         flex items-center justify-center py-2 font-medium">
                     <button>Editar</button>
                 </Link>
