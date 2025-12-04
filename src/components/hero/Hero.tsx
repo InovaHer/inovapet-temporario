@@ -90,7 +90,7 @@ export default function HeroHome() {
             "/>
 
             <img
-              src="https://ik.imagekit.io/wvjuanedn/Projeto%20Delivery/foto%20principal.jpg"
+              src="https://ik.imagekit.io/wvjuanedn/Projeto%20Delivery/prato%20comida%20(1).jpg"
               alt="nossos pets"
               className="
                 w-full 
