@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Perfil from "./pages/perfil/Perfil"
 import AtualizarPerfil from "./pages/perfil/AtualizarPerfil"
 import FormLogin from "./components/login/formlogin/FormLogin"
-import Navbar from "./components/navibar/Navbar";
+
 
 
 
@@ -21,7 +21,7 @@ function App() {
      <AuthProvider>
       <ToastContainer />
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
           
           <div className="min-h-[80vh]">
           <Routes>
