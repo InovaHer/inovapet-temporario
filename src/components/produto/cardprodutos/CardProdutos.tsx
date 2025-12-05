@@ -1,12 +1,18 @@
 import { PencilIcon, TrashIcon } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 import type Produto from '../../../models/Produto'
+import { useContext } from 'react';
+import { CartContext } from '../../../contexts/CardContext';
+
 
 interface CardProdutoProps {
     produto: Produto
 }
 
-function CardProduto({ produto }: CardProdutoProps) {
+function CardProdutos({ produto }: Readonly<CardProdutoProps>) {
+
+    const { adicionarProduto } = useContext(CartContext);
+
     return (
         <div className=" bg-slate-100
                 rounded-xl border border-indigo-300 shadow-md 
@@ -71,16 +77,16 @@ function CardProduto({ produto }: CardProdutoProps) {
                 </div>
             </div>
             <div className="flex justify-center">
-                <button
-                    className="w-1/2 text-white bg-fuchsia-500 hover:bg-fuchsia-700 
-        flex items-center justify-center py-2 rounded-xl font-semibold transition"
-                >
-                    Comprar
-                </button>
+                    <button
+                        className="w-1/2 text-white bg-fuchsia-500 hover:bg-fuchsia-700 
+            flex items-center justify-center py-2 rounded-xl font-semibold transition" onClick={() => adicionarProduto(produto)}
+                    >
+                        Comprar
+                    </button>
             </div>
 
         </div>
     )
 }
 
-export default CardProduto;
+export default CardProdutos;

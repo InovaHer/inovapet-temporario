@@ -38,7 +38,9 @@ function InovaHer() {
 
         <div className="flex flex-col justify-center items-center h-full">
           <p className="text-lg md:text-xl font-semibold text-center px-4">
-            Texto sobre o projeto
+            O InovaHer é um projeto idealizado para o publico pets com o objetivo de
+            facilitar a vida dos tutores e proporcionar bem-estar aos animais de
+            estimação.
           </p>
         </div>
 
