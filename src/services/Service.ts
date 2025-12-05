@@ -23,6 +23,12 @@ export const buscar = async (url: string, setDados: Function, header: Object) =>
     setDados(resposta.data);
 }
 
+// Função para consultar sem token
+export const buscarSem = async (url: string, setDados: Function) => {
+    const resposta = await api.get(url);
+    setDados(resposta.data);
+}
+
 // Função para cadastrar com token
 export const cadastrar = async (url: string, dados: Object, setDados: Function, header: Object) => {
     const resposta = await api.post(url, dados, header);

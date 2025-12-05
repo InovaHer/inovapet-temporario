@@ -1,7 +1,8 @@
 import Popup from "reactjs-popup";
-import FormProduto from "../formproduto/FormProduto";
+import "reactjs-popup/dist/index.css";
+import FormCategoria from "../formcategoria/FormCategoria";
 
-function ModalProduto({ onSave }: { onSave?: () => void }) {
+function ModalCategoria({ onSave }: { onSave?: () => void }) {
     return (
         <>
             <Popup
@@ -14,9 +15,9 @@ function ModalProduto({ onSave }: { onSave?: () => void }) {
                         px-6
                         py-3
                         rounded-xl
-                         hover:bg-fuchsia-700
+                       hover:bg-fuchsia-700
     transition'>
-                        Novo Produto
+                        Nova Categoria
                     </button>
                 }
                 modal
@@ -30,11 +31,12 @@ function ModalProduto({ onSave }: { onSave?: () => void }) {
                 }}
             >
                 {((close: () => void) => (
-                    <FormProduto close={close} onSave={onSave} />
+                    <FormCategoria close={close} onSave={onSave} />
                 )) as any}
             </Popup>
+
         </>
     );
 }
 
-export default ModalProduto;
+export default ModalCategoria;

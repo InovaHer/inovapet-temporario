@@ -1,4 +1,6 @@
 import { FacebookLogoIcon, InstagramLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react'
+import ModalFooter from '../modalfooter/ModalFotter'
+
 
 function Footer() {
 
@@ -9,7 +11,7 @@ function Footer() {
         <div className="flex justify-center w-full px-2 text-white bg-green-600 py-4 mt-auto">
             <div className="container flex flex-col items-center gap-2">
                 <p className='text-base font-bold text-center md:text-xl'>InovaPet | Copyright: {data}</p>
-                <p className='text-sm text-center md:text-lg'>Acesse nossas redes sociais</p>
+                <p className='text-sm text-center md:text-lg'>Acesse nossas redes sociais <ModalFooter/></p>
                 <div className='flex flex-wrap justify-center gap-2'>
                     <a href="#" target="_blank" className="flex items-center" rel="noopener noreferrer">
                         <span className="flex items-center justify-center w-10 h-10">

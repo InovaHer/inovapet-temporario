@@ -7,10 +7,12 @@ import {
     InfoIcon
 } from "@phosphor-icons/react";
 
-import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import SearchForm from "../navbar/SearchForm";
 import ModalLogin from "../login/modallogin/ModalLogin";
+import { AuthContext } from "../../contexts/AuthContext";
+
 
 type MenuState = 'closed' | 'open';
 
@@ -30,15 +32,17 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
     const handleMenuClose = (): void => {
         onMenuClose();
     };
+     
+
 
     return (
         <>
         {/* =================== NAVBAR DESKTOP =================== */}
         <div className="fixed top-0 left-0 z-50 w-full py-2 bg-green-600">
-            <div className="max-w-7xl mx-auto px-4 flex items-center justify-between text-lg text-white">
-
+            <div className="flex justify-between mx-auto px-4 text-lg text-white">
+                {/* max-w-7xl */}
             {/* ---------- DIV 1 - LOGO ---------- */}
-            <div className="flex items-center gap-3">
+            <div className="order-1 items-center">
                 <Link to="/home" className="flex items-center gap-2">
                 <img
                     src="https://ik.imagekit.io/gocq6aosm/patas.png"
@@ -52,12 +56,12 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
             </div>
 
             {/* ---------- DIV 2 - SEARCH ---------- */}
-            <div className="hidden md:flex w-2/5 justify-center text-black">
+            <div className="order-2 hidden md:flex w-2/5 justify-center text-black mx-25">
                 <SearchForm />
             </div>
 
             {/* ---------- DIV 3 - BOTÕES + ÍCONES ---------- */}
-            <div className="hidden md:flex items-center gap-8 font-extrabold justify-end">
+            <div className="order-3 hidden md:flex items-center gap-8 font-extrabold justify-end">
 
                 <Link to='/produtos' className='flex items-center gap-2 hover:underline'>
                 <ShoppingCartIcon size={22} weight="bold" />
@@ -75,6 +79,7 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
                 </Link>
 
                 <ModalLogin />
+                
 
                 <Link to='/carrinho' className='hover:text-fuchsia-300 transition'>
                 <ShoppingCartIcon size={28} weight='bold' />
@@ -151,9 +156,6 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
                 <InfoIcon size={22} weight="bold" />
                 Sobre
                 </Link>
-
-                {/* <div className='flex gap-6 mt-6'>
-                    <ModalLogin /> */}
 
                 <div className='flex gap-6 mt-6'>
                     <ModalLogin />

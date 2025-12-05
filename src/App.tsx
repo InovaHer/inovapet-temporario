@@ -14,10 +14,11 @@ import { ToastContainer } from "react-toastify"
 import Home from "./pages/home/Home"
 import SaibaMais from "./components/saibamais/SaibaMais"
 import Navbar from "./components/navbar/Navbar"
-import Footer from "./components/footer/footer"
+import Footer from "./components/footer/footer/Footer"
 import { useState } from "react"
 import Sobre from "./pages/sobre/Sobre"
 import FormLogin from "./components/login/formlogin/FormLogin"
+import DepoimentosPets from "./components/saibamais/depoimentos/DepoimentoPet"
 
 type MenuState = 'closed' | 'open';
 
@@ -43,7 +44,7 @@ function App() {
             onMenuToggle={toggleMenu}
             onMenuClose={closeMenu}
           />
-          <div className="min-h-[80vh]">
+          <div className="mt-[80px] min-h-[80vh]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
@@ -64,6 +65,8 @@ function App() {
               <Route path="/listarprodutos" element={<ListaProdutos />} />
               <Route path="/usuarios/logar" element={<FormLogin  />} />
               <Route path="/sobre" element={<Sobre />} />
+              <Route path="/depoimentos" element={<DepoimentosPets />} />
+              <Route path="/herostack" element={<Sobre />} />
 
             </Routes>
           </div>
