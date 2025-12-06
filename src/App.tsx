@@ -48,7 +48,7 @@ function App() {
             onMenuToggle={toggleMenu}
             onMenuClose={closeMenu}
           />
-          <div className="mt-[80px] min-h-[80vh]">
+          <div className=" min-h-[80vh]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />

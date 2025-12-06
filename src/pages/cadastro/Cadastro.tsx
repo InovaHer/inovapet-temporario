@@ -17,28 +17,28 @@ function Cadastro() {
 
 
   const [usuario, setUsuario] = useState<Usuario>({
-      id: 0,
-      nome: "",
-      usuario: "",
-      senha: "",
-      foto:""
+		id: 0,
+		nome: "",
+		usuario: "",
+		senha: "",
+		foto:""
     })
 
     useEffect( () => {
-      if(usuario.id !== 0) {
-        retornar();
-      }
+		if(usuario.id !== 0) {
+			retornar();
+		}
     }, [usuario])
 
     function retornar(){
-      navigate("/");
+		navigate("/");
     }
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-      setUsuario({
-        ...usuario,
-        [e.target.name]: e.target.value
-      })
+		setUsuario({
+			...usuario,
+			[e.target.name]: e.target.value
+		})
 
     }
 
@@ -158,7 +158,7 @@ function Cadastro() {
 						<button
 							type="submit"
 							className="rounded text-white bg-indigo-400 hover:bg-indigo-900
-                       w-1/2 py-2 flex justify-center"
+                       		w-1/2 py-2 flex justify-center"
 						>
 							{
 								isLoading ?
