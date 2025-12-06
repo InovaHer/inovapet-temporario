@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Instância do Axios
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL336
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 // Função para Cadastrar Usuário
