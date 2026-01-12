@@ -25,7 +25,7 @@ function Footer() {
         <div className="flex flex-1 flex-col items-center gap-2 text-center">
 
           <p className="text-base font-bold md:text-xl">
-            InovaPet - Comidinha Boa | © {data}
+            InovaPet - Comidinha Boa | © Todos os direitos reservados {data}
           </p>
 
           <p className="text-sm md:text-lg">
