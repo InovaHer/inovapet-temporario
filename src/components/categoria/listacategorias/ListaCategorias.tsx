@@ -28,7 +28,7 @@ function ListaCategorias() {
     }, [token])
     useEffect(() => {
         buscarCategorias();
-    }, []);
+    }, [categorias.length]);
 
 
     async function buscarCategorias() {
@@ -51,27 +51,24 @@ function ListaCategorias() {
 
     return (
         <>
- <div className="w-full border-t-4 border-emerald-600">
-  <div className="grid grid-cols-3 items-center max-w-7xl mx-auto px-4 py-4">
+            <div className="w-full border-t-4 border-emerald-600">
+                <div className="grid grid-cols-3 items-center max-w-7xl mx-auto px-4 py-4">
 
-    {/* Coluna esquerda (vazia só para balancear) */}
-    <div></div>
+                    {/* Coluna esquerda (vazia só para balancear) */}
+                    <div></div>
 
-    {/* Texto central */}
-    <h1 className="text-center text-2xl md:text-3xl font-bold text-emerald-800">
-      Categoria
-    </h1>
+                    {/* Texto central */}
+                    <h1 className="text-center text-2xl md:text-3xl font-bold text-emerald-800">
+                        Categorias
+                    </h1>
 
-    {/* Botão à direita */}
-    <div className="flex justify-end mt-4">
-      <ModalCategoria onSave={buscarCategorias} />
-    </div>
+                    {/* Botão à direita */}
+                    <div className="flex justify-end mt-4">
+                        <ModalCategoria onSave={buscarCategorias} />
+                    </div>
 
-  </div>
-</div>
-
-
-
+                </div>
+            </div>
             {
                 isLoading && (
                     <div className="flex justify-center w-full my-8 mt-40">
@@ -84,21 +81,18 @@ function ListaCategorias() {
             }
 
 
-            <div className="flex justify-center w-full min-h-[calc(100vh-8rem)] overflow-x-hidden">
-
-
-
-                <div className="box-border w-full px-4 py-4 mt-8 mb-4 max-w-8xl sm:px-6 md:px-8 lg:px-12 md:py-6">
-
+            <div className="flex justify-center w-full my-4">
+                <div className="container flex flex-col">
                     {
                         (!isLoading && categorias.length === 0) && (
-                            <span className="my-8 text-2xl text-center md:text-3xl text-emerald-800 md:my-16">
+                            <span className="text-3xl text-center my-8 text-emerald-800">
                                 Nenhuma categoria foi encontrada!
                             </span>
                         )
                     }
 
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 mb-4 md:mb-0" >
+                    <div className="grid grid-cols-1 md:grid-cols-2 
+                                    lg:grid-cols-3 gap-8">
                         {
                             categorias.map((categoria) => (
                                 <CardCategoria key={categoria.id} categoria={categoria} />
