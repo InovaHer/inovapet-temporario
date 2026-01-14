@@ -78,7 +78,7 @@ return (
     <>
 	<div className="grid grid-cols-1 lg:grid-cols-2 place-items-center font-bold ">
 			
-		<div className="bg-[url('https://ik.imagekit.io/wvjuanedn/Projeto%20Delivery/foto%20cadastrar.png?updatedAt=1768241185774')] lg:block hidden bg-no-repeat 
+		<div className="bg-[url('https://ik.imagekit.io/wvjuanedn/Projeto%20Delivery/lambeijos.png')] lg:block hidden bg-no-repeat 
                     w-full min-h-screen bg-cover bg-center"
 				></div>
 				<form className="flex justify-center items-center flex-col w-2/3 gap-3"

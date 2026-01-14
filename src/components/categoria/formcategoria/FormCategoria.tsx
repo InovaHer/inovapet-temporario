@@ -99,11 +99,11 @@ function FormCategoria({ close, onSave }: FormCategoriaProps) {
     return (
         <div className="container flex flex-col items-center justify-center mx-auto my-4 md:my-0 px-4 py-12 mt-24">
             {/* BOTÃO FECHAR */}
-            <button 
-            onClick={close}
-            className="absolute top-4 right-4 bg-emerald-500 text-emerald-800 px-4 py-2 rounded-lg"
+            <button
+                onClick={close}
+                className="absolute top-4 right-4 bg-emerald-500 text-emerald-800 px-4 py-2 rounded-lg"
             >
-            X
+                X
             </button>
             <h1 className="text-3xl md:text-4xl text-center mb-6 text-emerald-800 font-semibold mt-24">
                 {id === undefined ? "Cadastrar" : "Atualizar"} Categoria

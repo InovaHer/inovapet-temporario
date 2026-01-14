@@ -12,7 +12,7 @@ function Footer() {
         {/* Logo à esquerda */}
         <Link
           to="/home"
-          className="flex flex-shrink-0 items-center"
+          className="flex shrink-0 items-center"
         >
           <img
             src="https://ik.imagekit.io/gocq6aosm/patas.png"

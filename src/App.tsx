@@ -52,13 +52,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/categorias" element={<ListaCategorias />} />
               <Route path="/cadcategoria" element={<FormCategoria />} />
               <Route path="/editarcategoria/:id" element={<FormCategoria />} />
               <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
-
               <Route path="/produtos" element={<ListaProdutos />} />
               <Route path="/cadastrarproduto" element={<FormProduto />} />
               <Route path="/editarproduto/:id" element={<FormProduto />} />
@@ -66,10 +64,10 @@ function App() {
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/atualizarusuario" element={<AtualizarPerfil />} />
               <Route path="/saibamais" element={<SaibaMais />} />
-              <Route path="/listarprodutos" element={<ListaProdutos />} />
-              <Route path="/usuarios/logar" element={<FormLogin  />} />
+              <Route path="/listarprodutos" element={<ListaProdutos />} />  
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/depoimentos" element={<DepoimentosPets />} />
+              <Route path="/usuarios/logar" element={<FormLogin  />} />
               <Route path="/herostack" element={<Sobre />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/consultarnome/:nome" element={<ListarProdutosPorNome />} />

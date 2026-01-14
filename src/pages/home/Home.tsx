@@ -1,14 +1,11 @@
 import AlimentacaoNatural from "../../components/alimentacaonatural/AlimentacaoNatural";
 import CarrosselDepoimentos from "../../components/carroseldepoimentos/CarroselDepoimentos";
-import Hero from "../../components/hero/Hero";
 import CarrosselInicio from "../../components/carrosselinicio/CarrosselInicio";
 import CarrosselProdutos from "../../components/carrosselprodutos/CarrosselProdutos";
 
 function Home() {
   return (
     <main className="pt-16">
-      
-      <Hero />
 
       <div className="mb-8 md:mb-16">
         <CarrosselInicio />

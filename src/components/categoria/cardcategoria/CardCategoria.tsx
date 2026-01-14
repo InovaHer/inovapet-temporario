@@ -24,7 +24,7 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
                 </p>
 
                 {/* Descrição cresce para igualar os cards */}
-                <p className="text-base font-semibold text-justify text-emerald-800 flex-1 min-h-[96px]">
+                <p className="text-base font-semibold text-justify text-emerald-800 flex-1 min-h-24">
                     <b>Descrição:</b> {categoria.descricao}
                 </p>
 

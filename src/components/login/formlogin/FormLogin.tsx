@@ -6,7 +6,7 @@ import { ClipLoader } from "react-spinners";
 
 interface FormLoginProps {
   onLoginSuccess?: () => void;
-  close: () => void;
+  close?: () => void;
   onSave?: () => void;
 }
 

@@ -60,7 +60,7 @@ function CardProdutos({ produto }: Readonly<CardProdutoProps>) {
                     </p>
 
                     {/* Descrição cresce para igualar altura */}
-                    <p className="text-sm text-justify uppercase flex-1 min-h-[96px]">
+                    <p className="text-sm text-justify uppercase flex-1 min-h-24">
                         <b>Descrição:</b> {produto.descricao}
                     </p>
 
