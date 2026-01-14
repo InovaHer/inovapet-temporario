@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { PacmanLoader } from "react-spinners"
+import { PacmanLoader, SyncLoader } from "react-spinners"
 import type Produto from "../../../models/Produto"
 import CardProdutos from "../cardprodutos/CardProdutos"
 import { buscar } from "../../../services/Service"
@@ -81,10 +81,10 @@ function ListaProdutoPorNome() {
 			{/* Loading centralizado na tela */}
 			{isLoading && (
 				<div className="flex justify-center items-center min-h-screen">
-					<PacmanLoader
+					<SyncLoader
 						color="#0D9488"
 						margin={0}
-						size={80}
+						size={25}
 						speedMultiplier={2}
 						aria-label="Pacman-loading"
 					/>

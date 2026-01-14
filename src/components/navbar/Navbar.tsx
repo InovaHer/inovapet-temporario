@@ -39,6 +39,8 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
         onMenuClose();
     };
     
+    const token = localStorage.getItem("token");
+
     return (
         <>
         {/* =================== NAVBAR DESKTOP =================== */}
@@ -96,19 +98,19 @@ function Navbar({ menuState, onMenuToggle, onMenuClose }: Readonly<NavbarProps>)
 
             </div>
         {/* SEGUNDA LINHA  */}
-        <div className="flex justify-center  bg-emerald-200">
+        <div className="flex justify-center  bg-orange-300">
             <div className="flex gap-20 p-4">
-                <Link to='/produtos' className='flex text-emerald-800 hover:bg-emerald-600 hover:text-white rounded-md p-2 '>
+                <Link to='/produtos' className='flex text-emerald-800 hover:bg-orange-400 hover:text-emerald-800 rounded-md p-2 '>
                 <ShoppingCartIcon size={22} weight="bold" />
                 Produtos
                 </Link>
 
-                <Link to='/categorias' className='flex text-emerald-800 hover:bg-emerald-600 hover:text-white rounded-md p-2'>
+                <Link to='/categorias' className='flex text-emerald-800 hover:bg-orange-400 hover:text-emerald-800 rounded-md p-2'>
                 <TagIcon size={22} weight="bold" />
                 Categorias
                 </Link>
 
-                <Link to='/sobre' className='flex text-emerald-800 hover:bg-emerald-600 hover:text-white rounded-md p-2'>
+                <Link to='/sobre' className='flex text-emerald-800 hover:bg-orange-400 hover:text-emerald-800 rounded-md p-2'>
                 <InfoIcon size={22} weight="bold" />
                 Sobre
                 </Link>
