@@ -2,7 +2,7 @@ function Slide03() {
     return (
         <div className="flex justify-center items-center w-full">
             <img
-                src="https://ik.imagekit.io/wvjuanedn/Projeto%20Delivery/depoimento3.png"
+                src="https://ik.imagekit.io/wvjuanedn/Projeto%20Delivery/slide%20chico.png"
                 alt="Imagem Slide 01"
                 className="w-full mx-auto 
                         h-64   /* telas pequenas */
