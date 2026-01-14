@@ -1,101 +1,98 @@
-import { useContext, useEffect, useState, type ChangeEvent, type FormEvent } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import type UsuarioLogin from "../../../models/UsuarioLogin"
-import { AuthContext } from "../../../contexts/AuthContext"
-import { ClipLoader } from "react-spinners"
+import { useContext, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import type UsuarioLogin from "../../../models/UsuarioLogin";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { ClipLoader } from "react-spinners";
 
 interface FormLoginProps {
-	onLoginSuccess?: () => void;
+  onLoginSuccess?: () => void;
+  close: () => void;
+  onSave?: () => void;
 }
 
+function FormLogin({ onLoginSuccess, close }: FormLoginProps) {
+  const navigate = useNavigate();
 
-function FormLogin({ onLoginSuccess }: FormLoginProps) {
-	const navigate = useNavigate()
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({} as UsuarioLogin);
+  const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
-	const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({} as UsuarioLogin)
+  useEffect(() => {
+    if (usuario.token !== "") {
+      onLoginSuccess?.(); // aqui fecha o modal
+      navigate("/");
+    }
+  }, [usuario, navigate, onLoginSuccess]);
 
-	const { usuario, handleLogin, isLoading } = useContext(AuthContext)
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuarioLogin({
+      ...usuarioLogin,
+      [e.target.name]: e.target.value,
+    });
+  }
 
-	useEffect( () => {
-		if (usuario.token !== ""){
-			//fecha o modal
-			onLoginSuccess?.()
-			//redireciona para a home
-			navigate('/')
-		}
-	}, [usuario, navigate, onLoginSuccess])
+  function login(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    handleLogin(usuarioLogin);
+  }
 
-	function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-		setUsuarioLogin({
-			...usuarioLogin,
-			[e.target.name]: e.target.value,
-		})
-	}
+  return (
+    <div className="relative flex justify-center h-auto place-items-center font-bold p-10">
+      {/* BOTÃO X */}
+      <button
+        type="button"
+        onClick={close}
+        className="absolute top-4 right-4 bg-emerald-500 text-emerald-800 
+                   px-3 py-1 rounded hover:bg-emerald-600 hover:text-white"
+      >
+        X
+      </button>
 
-	function login(e: FormEvent<HTMLFormElement>) {
-		e.preventDefault();
+      <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
+        <h2 className="text-slate-900 text-5xl">Entrar</h2>
 
-		handleLogin(usuarioLogin);
-	}
+        <div className="flex flex-col w-full">
+          <label htmlFor="usuario">Usuário</label>
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            placeholder="Usuário"
+            className="border-2 border-slate-700 rounded p-2"
+            value={usuarioLogin.usuario || ""}
+            onChange={atualizarEstado}
+          />
+        </div>
 
-	console.log(JSON.stringify(usuarioLogin));
+        <div className="flex flex-col w-full">
+          <label htmlFor="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            className="border-2 border-slate-700 rounded p-2"
+            value={usuarioLogin.senha || ""}
+            onChange={atualizarEstado}
+          />
+        </div>
 
-	return (
-		<>
-			<div className="flex justify-center h-auto place-items-center font-bold p-10 ">
-				<form className="flex justify-center items-center flex-col w-1/2 gap-4"
-					onSubmit={login}
-				>
-					<h2 className="text-slate-900 text-5xl ">Entrar</h2>
-					<div className="flex flex-col w-full">
-					<label htmlFor="usuario">Usuário</label>
-					<input
-						type="text"
-						id="usuario"
-						name="usuario"
-						placeholder="Usuario"
-						className="border-2 border-slate-700 rounded p-2"
-						value={usuarioLogin.usuario}
-						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-					/>
-					</div>
-					<div className="flex flex-col w-full">
-					<label htmlFor="senha">Senha</label>
-					<input
-						type="password"
-						id="senha"
-						name="senha"
-						placeholder="Senha"
-						className="border-2 border-slate-700 rounded p-2"
-						value={usuarioLogin.senha}
-						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-					/>
-					</div>
-					<button
-						type="submit"
-						className="rounded bg-indigo-400 flex justify-center
-                		hover:bg-indigo-900 text-white w-1/2 py-2"
-					>
-						{	isLoading ?
-							<ClipLoader
-								color="#ffffff"
-								size={24}
-							/>
-							:
-							<span>Entrar</span>
-						}
-					</button>
+        <button
+          type="submit"
+          className="rounded bg-emerald-500 flex justify-center
+                     hover:bg-emerald-600 text-white w-1/2 py-2"
+        >
+          {isLoading ? <ClipLoader color="#ffffff" size={24} /> : <span>Entrar</span>}
+        </button>
 
-					<p>
-						Ainda não tem uma conta?{" "}
-						<Link to="/cadastro" className="text-indigo-800 hover:underline">
-							Cadastre-se
-						</Link>
-					</p>
-				</form>
-			</div>
-		</>
-	)
+        <p>
+          Ainda não tem uma conta?{" "}
+          <Link to="/cadastro" className="text-emerald-800 hover:underline">
+            Cadastre-se
+          </Link>
+        </p>
+      </form>
+    </div>
+  );
 }
 
 export default FormLogin

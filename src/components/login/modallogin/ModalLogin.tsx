@@ -4,7 +4,7 @@ import FormLogin from '../formlogin/FormLogin'; // substitua pelo seu componente
 import { UserIcon } from '@phosphor-icons/react';
 import { useState } from 'react';
 
-function ModalLogin() {
+function ModalLogin({ onSave }: { onSave?: () => void }) {
 
     const [open, setOpen] = useState(false);
 
@@ -16,7 +16,7 @@ function ModalLogin() {
                 open={open}
                 onClose={closeModal}
                 trigger={
-                    <button className="text-white hover:text-gray-300">
+                    <button className="text-black hover:text-white">
                         <UserIcon size={22} />
                     </button>
                 }
@@ -26,7 +26,10 @@ function ModalLogin() {
                     paddingBottom: '2rem'
                 }}
             >
-                <FormLogin onLoginSuccess={closeModal} />
+                {((close:() => void) => (
+                    <FormLogin close={close} onSave={onSave} />
+                )) as any}
+                {/* <FormLogin onLoginSuccess={closeModal} /> */}
             </Popup>
         </>
     );
