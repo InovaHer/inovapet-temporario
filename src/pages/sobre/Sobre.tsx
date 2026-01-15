@@ -1,5 +1,6 @@
 import Carrossel from "../../components/carrossel/Carrossel"
 import SecaoEquipe from "../../components/equipe/SecaoEquipe"
+import SobreInovaHer from "../../components/sobreinovaher/SobreInovaHer"
 import HeroStack from "../../components/stacks/herostack/HeroStack"
 
 function Sobre() {
@@ -14,6 +15,11 @@ function Sobre() {
             <div className="mt-6 md:mt-0">
                 <SecaoEquipe />
             </div>
+
+            <div className="mt-6 md:mt-0">
+                <SobreInovaHer />
+            </div>
+
 
         </>
     )
