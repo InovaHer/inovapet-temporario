@@ -157,12 +157,13 @@ function FormProduto({ close, onSave }: FormCategoriaProps) {
                 {/* BOTÃO FECHAR */}
                 <button
                     type="button"
-                    onClick={close}
-                    className="absolute top-4 right-4 bg-emerald-500 text-emerald-800 
-                            px-3 py-1 rounded hover:bg-emerald-600 hover:text-white"
+                    onClick={() => (close ? close() : navigate("/produtos"))}
+                    className="absolute top-4 right-4 bg-emerald-500 text-emerald-800 px-3 py-1 rounded-lg z-10"
                 >
                     X
                 </button>
+
+
                 {/* CONTEÚDO COM SCROLL */}
                 <div className="overflow-y-auto px-6 py-6">
 
@@ -285,10 +286,11 @@ function FormProduto({ close, onSave }: FormCategoriaProps) {
                             <select
                                 name="categoria"
                                 id="categoria"
-                                className="border p-2 bborder-emerald-800 rounded bg-emerald-50"
+                                className="border-2 border-emerald-800 rounded p-2 bg-emerald-50"
                                 value={categoria.id || ""}
                                 onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
                             >
+
                                 <option value="" disabled>Selecione uma Categoria</option>
 
                                 {categorias.map((cat) => (
