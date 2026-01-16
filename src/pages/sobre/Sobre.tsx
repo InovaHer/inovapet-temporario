@@ -1,20 +1,26 @@
 import Carrossel from "../../components/carrossel/Carrossel"
-import Inovapet from "../../components/inovapet/Inovapet"
+import SecaoEquipe from "../../components/equipe/SecaoEquipe"
+import SobreInovaHer from "../../components/sobreinovaher/SobreInovaHer"
 import HeroStack from "../../components/stacks/herostack/HeroStack"
-
 
 function Sobre() {
     return (
         <>
             <div className="mt-6 md:mt-0">
-                    <Inovapet />
+                <Carrossel />
             </div>
             <div className="mt-6 md:mt-0">
-                    <Carrossel />
+                <HeroStack />
             </div>
             <div className="mt-6 md:mt-0">
-                    <HeroStack />
+                <SecaoEquipe />
             </div>
+
+            <div className="mt-6 md:mt-0">
+                <SobreInovaHer />
+            </div>
+
+
         </>
     )
 }
